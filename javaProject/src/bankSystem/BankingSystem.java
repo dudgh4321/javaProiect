@@ -43,6 +43,14 @@ public class BankingSystem{
 				BankAccount.Index++;
 				
 			}else if(ch == 2) {
+				System.out.print("입력하실 계좌번호 : ");
+		    	 accNum = sc.nextInt();
+		    	System.out.print("입금하실 금액 : ");
+		    	 money = sc.nextInt();
+		    	 accNum ==
+		    	System.out.println("acc");
+		    	 
+		    	
 				
 				
 				

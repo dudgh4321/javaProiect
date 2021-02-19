@@ -6,7 +6,7 @@ public class Variable1 {
 		int n1 = 150;
 		int n2 = 50;
 		int result = n1 + n2;
-		System.out.println("result => ");
+		System.out.println("result => " + result);
 
 	}
 
