@@ -2,133 +2,117 @@ package bankSystem;
 
 import java.util.Scanner;
 
-public class BankingSystem{
+public class BankingSystem {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
-		BankAccount[] ac = new BankAccount[5];
+				
 		Scanner sc = new Scanner(System.in);
 		int ch = 0;
 		String accNum;
 		String name;
-		int money = 0;
-		
+		int balance;
+	
 		
 		while(true) {
 			
-			System.out.println("=========ÀºÇà ¾÷¹« °ü¸® ÇÁ·Î±×·¥=========");
-			System.out.println("1. °èÁÂµî·Ï ");
-			System.out.println("2. ÀÔ±İ ");
-			System.out.println("3. ÀÜ¾×Á¶È¸ ");
-			System.out.println("4. ¸ğµç °èÁÂ Á¶È¸ ");
-			System.out.println("5. ÇÁ·Î±×·¥ Á¾·á");
+			System.out.println("=========ì€í–‰ ì—…ë¬´ ê´€ë¦¬ í”„ë¡œê·¸ë¨=========");
+			System.out.println("1. ê³„ì¢Œë“±ë¡ ");
+			System.out.println("2. ì…ê¸ˆ ");
+			System.out.println("3. ì”ì•¡ì¡°íšŒ ");
+			System.out.println("4. ëª¨ë“  ê³„ì¢Œ ì¡°íšŒ ");
+			System.out.println("5. í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 			System.out.println("===================================");
-			System.out.print("¿øÇÏ´Â ¹øÈ£ ÀÔ·Â : ");
+			System.out.print("ì›í•˜ëŠ” ë²ˆí˜¸ ì…ë ¥ : ");
 			
 			ch = sc.nextInt();
 			
 			if(ch == 1) {
-				System.out.println("°èÁÂµî·ÏÇÕ´Ï´Ù.");
-				System.out.print("ÀÌ¸§ : ");
+				Account account = new account[5]
+				System.out.println("ê³„ì¢Œë“±ë¡í•©ë‹ˆë‹¤.");
+				System.out.print("ì´ë¦„ : ");
 				sc.nextLine();
 				name = sc.nextLine();
-				System.out.print("°èÁÂ¹øÈ£ : ");
+				System.out.print("ê³„ì¢Œë²ˆí˜¸ : ");
 				accNum = sc.nextLine();
 				
-				ac[BankAccount.Index] = new BankAccount(name,accNum,0);
+				Account account[index] = new Account(accNum,name,balance);
 				
-				
-				System.out.println("¼º°øÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
-				BankAccount.Index++;
+				System.out.println("ì„±ê³µì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+				index++;
 				
 			}else if(ch == 2) {
-				System.out.print("ÀÔ·ÂÇÏ½Ç °èÁÂ¹øÈ£ : ");
+				System.out.print("ì…ê¸ˆí•˜ì‹¤ ê³„ì¢Œë²ˆí˜¸ : ");
+				 sc.nextLine();
 		    	 accNum = sc.nextInt();
-		    	System.out.print("ÀÔ±İÇÏ½Ç ±İ¾× : ");
-		    	 money = sc.nextInt();
-		    	 accNum ==
-		    	System.out.println("acc");
-		    	 
-		    	
-				
-				
-				
+		    	 if(accNum.equals(??)) {
+		    		 System.out.print("ì…ê¸ˆí•˜ì‹¤ ê¸ˆì•¡ : ");
+			    	 money = sc.nextInt();
+			    	 balance[i] =+ money
+		    	 }
+			    			
+		    }
 			}else if(ch == 3) {
-				
+				System.out.println("ì¡°íšŒí•˜ì‹¤ ê³„ì¢Œë²ˆí˜¸ : ");
+				 sc.nextLine();
+		    	 accNum = sc.nextLine();
+		    	 if(accNum.equals(??)) {
+				System.out.println("ì”ì•¡ : " + balance);
+	 
 				
 			}else if(ch== 4){
-				System.out.println("¸ğµç°èÁÂÁ¶È¸");
+				System.out.println("ëª¨ë“ ê³„ì¢Œì¡°íšŒ");
+				System.out.println("ì´ë¦„ : ");
+				sc.nextLine();
+		    	name = sc.nextLine();
+		    	for(int i=0;i<10; i++) {
+		    		account[i] = name
+		    	}
+
 				
 				
 			}else {
 				break;
 			}
 		}
-	
-	
-	System.out.println("ÀÌ¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
-	
-		
-		
-	}
-	
-	/*
-	
-	
-	
-	int selecNum = scan.nextInt();	
-	
-	int inputMoney = 0 ;
-	int inputNum = 0;
-	
-	String[] Names = new String[10] ;
-	   int[] accountNum = new int[10] ;
-	   int[] balance= new int[10];	
 
-		
-	switch (selecNum) {
-		case 1:
-			System.out.println("°èÁÂ¸¦ µî·ÏÇÕ´Ï´Ù.");
-			System.out.print("ÀÌ¸§ : ");
-			while(for(i=0; Names[i] == null, i<10; i++)) {
-				 Names[i] = scan.next();
-			System.out.print("°èÁÂ¹øÈ£ : ");
-			 accountNum[i] = scan.nextInt();
-			System.out.println("¼º°øÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.");
-		    break;
-		
-	    case 2:
-	    	System.out.print("ÀÔ·ÂÇÏ½Ç °èÁÂ¹øÈ£ : ");
-	    	 inputNum = scan.nextInt();
-	    	System.out.print("ÀÔ±İÇÏ½Ç ±İ¾× : ");
-	    	 inputMoney = scan.nextInt();
-	    	 for(i=0; i>10, inputNum == accountNum[i]; i++)
-	    		 			balance[i] += inputMoney;
-	    	break;
-	    
-	    case 3:
-	    	System.out.print("ÀÜ¾×Á¶È¸ °èÁÂ¹øÈ£ : ");
-	    	 inputNum = scan.nextInt();
-	    	 for(i=0; i>10, inputNum == accountNum[i]; i++)
-	    		 		System.out.print(balance[i]);
-	    	break;
-	    
-	    case 4:{
-	    	System.out.println("¸ğµç°èÁÂÁ¶È¸ ");
-	    	for(i=0; Names[i] != null, i<10; i++)
-	    	System.out.print((i+1)+"¹øÂ° : "+ Names[i]+"," + accountNum[i]+"," + balance[i]);
-	    	break;
-	    
-	    case 5:
-	    	System.out.println("ÀÌ¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
-	    	break;
+	System.out.println("ì´ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 
-
-	    }}}
-
-	*/
-	
-	
 }
-	
+
+	/*
+	 * 
+	 * 
+	 * 
+	 * int selecNum = scan.nextInt();
+	 * 
+	 * int inputMoney = 0 ; int inputNum = 0;
+	 * 
+	 * String[] Names = new String[10] ; int[] accountNum = new int[10] ; int[]
+	 * balance= new int[10];
+	 * 
+	 * 
+	 * switch (selecNum) { case 1: System.out.println("ê³„ì¢Œë¥¼ ë“±ë¡í•©ë‹ˆë‹¤.");
+	 * System.out.print("ì´ë¦„ : "); while(for(i=0; Names[i] == null, i<10; i++)) {
+	 * Names[i] = scan.next(); System.out.print("ê³„ì¢Œë²ˆí˜¸ : "); accountNum[i] =
+	 * scan.nextInt(); System.out.println("ì„±ê³µì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤."); break;
+	 * 
+	 * case 2: System.out.print("ì…ë ¥í•˜ì‹¤ ê³„ì¢Œë²ˆí˜¸ : "); inputNum = scan.nextInt();
+	 * System.out.print("ì…ê¸ˆí•˜ì‹¤ ê¸ˆì•¡ : "); inputMoney = scan.nextInt(); for(i=0; i>10,
+	 * inputNum == accountNum[i]; i++) balance[i] += inputMoney; break;
+	 * 
+	 * case 3: System.out.print("ì”ì•¡ì¡°íšŒ ê³„ì¢Œë²ˆí˜¸ : "); inputNum = scan.nextInt(); for(i=0;
+	 * i>10, inputNum == accountNum[i]; i++) System.out.print(balance[i]); break;
+	 * 
+	 * case 4:{ System.out.println("ëª¨ë“ ê³„ì¢Œì¡°íšŒ "); for(i=0; Names[i] != null, i<10; i++)
+	 * System.out.print((i+1)+"ë²ˆì§¸ : "+ Names[i]+"," + accountNum[i]+"," +
+	 * balance[i]); break;
+	 * 
+	 * case 5: System.out.println("ì´ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤."); break;
+	 * 
+	 * 
+	 * }}}
+	 * 
+	 */
+
+}
