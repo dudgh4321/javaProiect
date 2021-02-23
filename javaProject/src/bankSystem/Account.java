@@ -1,16 +1,45 @@
 package bankSystem;
 
 public class Account {
-	static int index = 0;
-	public String accountNum;
-	public String name;
-	int balance;
 
-	public Account(String accountNum, String name, int balance) {
-
-		this.accountNum = accountNum;
+	public static int accIndex = 0;
+	private String accNum = null;
+	private String name = null;
+	int totalMoney = 0;
+	
+	
+	public Account(String name, String accNum, int totalMoney) {
+		
 		this.name = name;
-		this.balance = 0;
-
+		this.accNum = accNum;
+		this.totalMoney = totalMoney;
 	}
+	
+	
+	
+	public String getAccNum() {
+		return accNum;
+	}
+	public void setAccNum(String accNum) {
+		this.accNum = accNum;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getTotalMoney() {
+		return totalMoney;
+	}
+	public void setTotalMoney(int totalMoney) {
+		this.totalMoney = totalMoney;
+	}
+	
+	public void printTotalMoney() {
+		System.out.println(this.totalMoney);
+	}
+	
+	
+	
 }
