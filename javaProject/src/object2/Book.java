@@ -6,15 +6,14 @@ public class Book {
 	private String writer;
 	private String publisher;
 	private int price;
-	
+
 	public Book(String title, String writer, String publisher, int price) {
 		super();
 		this.title = title;
 		this.writer = writer;
 		this.publisher = publisher;
 		this.price = price;
-		
-		
+
 	}
 
 	public String getTitle() {
@@ -48,8 +47,5 @@ public class Book {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	
+
 }
-
-

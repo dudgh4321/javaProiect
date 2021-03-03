@@ -9,61 +9,92 @@ public class LibrarySystem {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Book[] bookList = new Book[10];
-		Member[] user = new Member[3];
+		Member[] users = new Member[3];
 		String title = null;
 		String name = null;
-		String Id = null;
+		String id = null;
 
-		while (true)
-			System.out.println("====================================----===================");
-		System.out.println("1)도서정보입력 2)회원정보등록 3) 도서대여 4) 도서반납 5)도서목록 9)종료");
-		System.out.println("===========================================================");
-		System.out.print("선택 >>");
+		while (true) {
+			System.out.println("==============================================================");
+			System.out.println("1)도서정보입력  2)회원정보등록  3) 도서대여  4) 도서반납  5)도서목록  9)종료");
+			System.out.println("==============================================================");
+			System.out.print("선택 >>");
 
-		int select = 0;
-		select = sc.nextInt();
+			int select = 0;
+			select = sc.nextInt();
 
-		if (select == 1) {
-			String writer = null;
-			String publisher = null;
-			int price = 0;
-			System.out.println("도서제목을 입력하세요");
-			title = sc.nextLine();
-			System.out.println("저자을 입력하세요");
-			writer = sc.nextLine();
-			System.out.println("출판사을 입력하세요");
-			publisher = sc.nextLine();
-			System.out.println("가격을 입력하세요");
-			price = sc.nextInt();
-			bookList[Book.bookListindex] = new Book(title, writer, publisher, price);
+			if (select == 1) {
+				String writer = null;
+				String publisher = null;
+				int price = 0;
+				sc.nextLine();
+				System.out.print("도서제목을 입력하세요 >> ");
+				title = sc.nextLine();
+				System.out.print("저자을 입력하세요 >> ");
+				writer = sc.nextLine();
+				System.out.print("출판사을 입력하세요>> ");
+				publisher = sc.nextLine();
+				System.out.print("가격을 입력하세요 >> ");
+				price = sc.nextInt();
+				bookList[Book.bookListindex] = new Book(title, writer, publisher, price);
+				Book.bookListindex++;
 
-			Book.bookListindex++;
+			} else if (select == 2) {
+				sc.nextLine();
+				System.out.print("이름을 입력하세요 >> ");
+				name = sc.nextLine();
+				System.out.print("ID을 입력하세요 >> ");
+				id = sc.nextLine();
+				users[Member.usersindex] = new Member(name, id);
+				Member.usersindex++;
 
-		} else if (select == 2) {
-			name = sc.nextLine();
-			user[Member.userindex].setName(name);
-			Id = sc.nextLine();
-			user[Member.userindex].setId(Id);
-			Member.userindex++;
+			} else if (select == 3) {
+				sc.nextLine();
+				System.out.print("ID를 입력하세요 >> ");
+				id = sc.nextLine();
+				System.out.print("대여하실 책이름을 입력하세요 >> ");
+				title = sc.nextLine();
+				for (int i = 0; i < Member.usersindex; i++) {
+					if ((users[i].getId()).equals(id)) {
+						for (int j = 0; j < Book.bookListindex; j++) {
+							if ((bookList[j].getTitle()).equals(title))
+								users[i].rent(bookList[j]);
 
-		} else if (select == 3) {
-			title = sc.nextLine();
-			for (int i = 0; i < Book.bookListindex; i++) {
-				if (bookList[i].equals(title)) {
-					user[i].rent(bookList[i]);
-				} else {
-					System.out.println("해당하는 도서가 없습니다.");
+						}
+
+					}
 				}
+
+			} else if (select == 4) {
+				sc.nextLine();
+				System.out.print("ID를 입력하세요 >> ");
+				id = sc.nextLine();
+				System.out.print("책제목을 입력하세요 >> ");
+				title = sc.nextLine();
+				for (int i = 0; i < users.length; i++) {
+					if ((users[i].getId()).equals(id)) {
+						for (int j = 0; j < users[i].getRentBooks().length; j++) {
+							if ((users[i].getRentBooks()[j].getTitle()).equals(title)) {
+								users[i].overdue(users[i].getRentBooks()[j]);
+							}
+						}
+
+					}
+				}
+			} else if (select == 5) {
+				sc.nextLine();
+				System.out.print("ID을 입력하세요 >> ");
+				id = sc.nextLine();
+				for (int i = 0; i < Member.usersindex; i++) {
+					if (users[i].getId().equals(id)) {
+						users[i].getBookInfo();
+					}
+
+				}
+			} else if (select == 9) {
+				System.out.println("프로그램을 종료합니다");
+				break;
 			}
-		} else if (select == 4) {
-			name = sc.nextLine();
-			title = sc.nextLine();
-			for (int i = 0; i < Member.userindex ; i++) {
-			if(user[i].getName().equals(name) || user[i].getRentBooks().equals(title)) {
-				user[Member.userindex].overdue();
-			}	
-		 else {
-			System.out.println("해당하는 도서가 없습니다.");
 		}
 	}
 }

@@ -1,21 +1,23 @@
 package object2;
 
 public class Member {
-	public static int userindex = 0;
-	private String Id;
+	public static int usersindex = 0;
+	private String id;
 	private String name;
-	private Book[] rentBooks = new Book[5];
-	public Member(){
-		
+	public Book[] rentBooks = new Book[5];
+
+	public Member(String name, String id) {
+
+		this.name = name;
+		this.id = id;
 	}
 
-	public Member(String id, String name, Book[] rentBooks) {
+	public Member(String name, String id, Book[] rentBooks) {
 		super();
-		Id = id;
 		this.name = name;
+		this.id = id;
 		this.rentBooks = rentBooks;
 	}
-
 
 	public void rent(Book book) {
 		for (int i = 0; i < rentBooks.length; i++) {
@@ -37,22 +39,21 @@ public class Member {
 	}
 
 	public void getBookInfo() {
-		System.out.print("멤버이름: " + Id + ",  책 이름: ");
+		System.out.print("멤버이름: " + id + ",  책 이름: ");
 		for (int i = 0; i < rentBooks.length; i++) {
 			if (rentBooks[i] != null)
-				System.out.print(rentBooks[i].getTitle() + " ");
-			else
-				System.out.println();
+				System.out.print(rentBooks[i].getTitle() + "/");
 
 		}
+		System.out.println();
 	}
 
 	public String getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public Book[] getRentBooks() {
