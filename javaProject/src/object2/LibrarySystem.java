@@ -71,11 +71,13 @@ public class LibrarySystem {
 				id = sc.nextLine();
 				System.out.print("책제목을 입력하세요 >> ");
 				title = sc.nextLine();
-				for (int i = 0; i < users.length; i++) {
+				for (int i = 0; i < Member.usersindex; i++) {
 					if ((users[i].getId()).equals(id)) {
 						for (int j = 0; j < users[i].getRentBooks().length; j++) {
-							if ((users[i].getRentBooks()[j].getTitle()).equals(title)) {
-								users[i].overdue(users[i].getRentBooks()[j]);
+							if(users[i].getRentBooks()[j] != null) {
+								if ((users[i].getRentBooks()[j].getTitle()).equals(title)) {
+									users[i].overdue(users[i].getRentBooks()[j]);
+								}
 							}
 						}
 

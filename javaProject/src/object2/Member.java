@@ -31,7 +31,7 @@ public class Member {
 
 	public void overdue(Book book) {
 		for (int i = 0; i < rentBooks.length; i++) {
-			if (rentBooks[i].getTitle().equals(book.getTitle()))
+			if ((rentBooks[i].getTitle()).equals(book.getTitle()))
 				rentBooks[i] = null;
 			break;
 
