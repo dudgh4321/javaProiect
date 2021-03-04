@@ -59,7 +59,6 @@ public class LibrarySystem {
 						for (int j = 0; j < Book.bookListindex; j++) {
 							if ((bookList[j].getTitle()).equals(title))
 								users[i].rent(bookList[j]);
-
 						}
 
 					}
