@@ -15,7 +15,9 @@ public class CalendarExe {
 		int lastDate = cal.getActualMaximum(Calendar.DATE); // 그 달의 마지막일수
 		int firstDate = cal.get(Calendar.DAY_OF_WEEK);
 		
-		for(int i=0; i<7; i++)
+		for(int i=0; i<7; i++) {
+			System.out.println();
+		}
 		
 		for (int i = 1; i < firstDate; i++) {
 			System.out.printf("%3s", " ");
