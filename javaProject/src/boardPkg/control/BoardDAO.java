@@ -10,7 +10,7 @@ import boardPkg.model.Board;
 
 public class BoardDAO {
 	Connection conn = null;
-	Statement stmt = null;
+	Statement stmt = null; //pstmt??뭐지
 	ResultSet rs = null;
 	String sql = null;
 
@@ -33,7 +33,6 @@ public class BoardDAO {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -48,7 +47,7 @@ public class BoardDAO {
 		int i = 0;
 
 		try {
-			stmt = conn.createStatement();
+			stmt = conn.createStatement(); //db로sql문을 보내기위해 sql서버statement 개체를 만듬
 			rs = stmt.executeQuery(sql);// 위의 sql 쿼리문이 실행 rs에 담는다
 			while (rs.next()) { // next메소드 한건씩 읽어오는 메소드?
 				Board brd = new Board();
