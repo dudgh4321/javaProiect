@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class EmpDAO {
 	Connection conn = null;
@@ -14,7 +17,28 @@ public class EmpDAO {
 		String passwd = "hr";
 		conn = DBUtil.getConnection(url, user, passwd);
 	}
+	public void empList1() {
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String sql = "select * from emp_java";
+		try {
+			psmt = conn.prepareStatement(sql); // 쿼리실행문
+			rs = psmt.executeQuery(); // 쿼리를 실행해서 실행한 결과를 받아오는 와서 담는 메소드
+			
+	Set<Employee> empset = new HashSet<>();
+	Iterator<Employee> empitor = empset.iterator();
+	Employee emp = new Employee();
+	empitor.next().getEmployeeID();
+	System.out.println(	empitor.next().getEmployeeID();
+);
+	while(rs.next()) {
+		empset.add(rs.getString("email"));
+	}
+		
+	
 
+	
+	
 	public void empList() {
 
 		PreparedStatement psmt = null;

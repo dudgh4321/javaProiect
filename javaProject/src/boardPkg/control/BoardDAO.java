@@ -69,7 +69,7 @@ public class BoardDAO {
 		}
 		return boards;
 	}
-
+	
 	// 한건조회
 	public Board selectBoard(int boardNo) {
 		sql = "select * from board where board_no = " + boardNo;

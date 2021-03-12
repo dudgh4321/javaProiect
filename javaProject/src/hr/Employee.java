@@ -8,6 +8,7 @@ public class Employee {
 	private String phoneNumber;
 	private String hireDate;
 	private int salary;
+	
 	@Override
 	public String toString() {
 		return "Employee [employeeID=" + employeeID + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
