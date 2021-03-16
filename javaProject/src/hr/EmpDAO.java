@@ -16,7 +16,7 @@ import java.util.Set;
 public class EmpDAO {
 	Connection conn = null;
 
-	EmpDAO() {
+	public EmpDAO() {
 		String path = "config/database.properties";
 		FileReader fr = null;
 		Properties prop = new Properties();
