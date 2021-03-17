@@ -1,6 +1,6 @@
 package lambdaExpression.predicate;
 
-public class Student {
+public class Student implements Comparable {
 	private String name;
 	private String sex;
 	private int score;
@@ -17,5 +17,14 @@ public class Student {
 	}
 	public int getScore() {
 		return score;
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Student) {
+		Student student = (Student) o;
+		return this.name.compareTo(o.get);
+		}
+	  
 	}
 }
