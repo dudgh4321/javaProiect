@@ -10,7 +10,7 @@ import boardPkg.model.Board;
 
 public class BoardDAO {
 	Connection conn = null;
-	Statement stmt = null; //pstmt??뭐지
+	Statement stmt = null; 
 	ResultSet rs = null;
 	String sql = null;
 
